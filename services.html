@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment Portfolio</title>
+    <style>
+        html, body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .media {
+            background-color: black;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar {
+            background-color: darkgray;
+            color: black;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .search-container {
+            display: flex;
+        }
+        .search-container input {
+            padding: 12px;
+            border: 1px solid #007bff;
+            border-radius: 5px 0 0 5px;
+            width: 600px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: black;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-left: 20px;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #007BFF;
+        }
+        .language-select {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+        .hero {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            transition: transform 1s ease;
+            height: 100%;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+        .slide1 { background-image: url('eq3.jpg'); }
+        .slide2 { background-image: url('eq4.jpg'); }
+        .slide3 { background-image: url('eq1.jpg'); }
+        .slide4 { background-image: url('eq2.jpg'); }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #fe6601;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+        .introduction {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .describ {
+            display: flex;
+            justify-content: center;
+        }
+        .intro {
+            background-color: white;
+            height: 390px;
+            width: 500px;
+            margin-left: 5px;
+        }
+        .class33 {
+            width: 33%;
+            float: left;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .class33 img {
+            width: 130px;
+            height: 130px;
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: justify;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .ft {
+            margin-left: 200px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer li {
+            display: block;
+            margin: 20px;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+            .class33 {
+                width: 100%;
+                float: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="media">
+        <div class="social-media-icons">
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="navbar">
+        <h1>NINJA</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Products</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="language-select">
+            <label for="language">Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+            </select>
+        </div>
+    </div>
+    
+    <div class="hero">
+        <div class="slides">
+            <div class="slide slide1"></div>
+            <div class="slide slide2"></div>
+            <div class="slide slide3"></div>
+            <div class="slide slide4"></div>
+        </div>
+        <div class="content">
+            <h1>Welcome to Our Thermometer Store</h1>
+            <p>Quality Thermometers for Every Need</p>
+            <button class="btn">Shop Now</button>
+        </div>
+    </div>
+
+    <div class="introduction">
+        <h2>Brief Introduction</h2>
+        <div class="describ">
+            <div class="intro">
+                <img src="back.PNG" alt="Intro Image">
+            </div>
+            <div class="intro">
+                <h4>Xian Ninja Base Equipment Factory Co., Ltd</h4>
+                <p>Welcome to our company, a leading provider of high-quality fitness equipment based in Xi'an City, China. Since our establishment in 2005, we have dedicated ourselves to delivering innovative and reliable products that meet the diverse needs of fitness enthusiasts around the globe. Our state-of-the-art factory is equipped with advanced technology and skilled professionals, allowing us to produce a wide range of fitness equipment tailored for both commercial and home use.</p>
+                <p>With a commitment to quality and customer satisfaction, we have built a loyal clientele worldwide, earning a reputation for excellence in the fitness industry. Our comprehensive product line includes everything from strength training machines to cardio equipment, ensuring that we have the perfect solution for every fitness goal.</p>
+                <p>Join us on our journey to promote health and wellness through fitness. Experience the difference with our premium equipment, and let us help you achieve your fitness aspirations!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="choose">
+        <h2 class="introduction">Why Choose Us</h2>
+        <div class="class33">
+            <img src="24.PNG" alt="24/7 Support">
+            <h2>24/7 Available</h2>
+            <p>We provide 24/7 support, delivering innovative solutions tailored to your needs. Our dedicated team ensures reliability, efficiency, and exceptional service for all your business requirements.</p>
+        </div>
+        <div class="class33">
+            <img src="customer.PNG" alt="Customer Feedback">
+            <h2>Customer Feedback</h2>
+            <p>Our customers rave about our exceptional service and innovative solutions. We prioritize their needs, ensuring satisfaction and building lasting relationships through trust and reliability.</p>
+        </div>
+        <div class="class33">
+            <img src="maint.PNG" alt="Maintenance">
+            <h2>Maintenance</h2>
+            <p>Our maintenance services ensure optimal performance and longevity. We provide comprehensive instruction guides, empowering you to easily manage and care for your equipment effectively.</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="ft">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="ft">
+            <h2>Contact Us</h2>
+            <p>Email: info@ninjabase.com</p>
+            <p>Tell: +8619870035632</p>
+            <p>WhatsApp: +8619870035632</p>
+            <p>WeChat: +8619870035632</p>
+            <p>Address: 12th Changan Road, Yanta Dist., Xi'an, China</p>
+        </div>
+        <div class="ft">
+            <div class="contact-message">
+                <h2>Leave a Message</h2>
+                <form action="#" method="POST">
+                    <input class="name" type="text" placeholder="Your Name" required>
+                    <input class="name" type="email" placeholder="Your Email" required>
+                    <textarea class="name" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">WhatsApp Us</a>
+
+    <script>
+        const slides = document.querySelector('.slides');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            const totalSlides = document.querySelectorAll('.slide').length;
+            currentIndex = (index + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(() => {
+            showSlide(currentIndex + 1);
+        }, 3000); // Change slide every 3 seconds
+    </script>
+</body>
+</html>

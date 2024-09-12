@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0px;
+         
+        }
+        
+        /* nvahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh*/
+        
+        .media {
+            background-color:#d74308;
+            color: white;
+            padding: 3px 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar {
+            background-color:white;
+            color:black;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .navbar h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        .search-container {
+            display: flex;
+        }
+        .search-container input {
+            padding: 12px;
+            border: 1px solid #007bff;
+            border-radius: 5px 0 0 5px;
+            width: 600px;
+            font-size: 16px;
+        }
+        .search-container button {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #fe6601;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar li {
+            margin-left: 20px;
+        }
+        .navbar a {
+            color: #fe6601;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .navbar a:hover {
+            color: #007BFF;
+        }
+        .language-options {
+  display: inline-block;
+  padding: 1px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.language-options ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 3px;
+}
+
+.language-options li {
+  display: inline-block;
+  padding: 2px 1px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.language-options li:hover {
+  border: 1px solid #ccc;
+  background-color: #e0e0e0;
+}
+
+.language-options img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+        /*8888888888888888888888888888888888888888nav88******************************/
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filter select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin: 0 15%;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 13px;
+            width: calc(19% - 25px); /* Four columns with spacing */
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    
+        .product-title {
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .product-price {
+            color: #28a745;
+            font-weight: bold;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .nav-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin: 0 5px;
+        }
+
+        .nav-button:hover {
+            background: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .product-card {
+                width: calc(48% - 20px); /* Two columns for medium screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: calc(100% - 20px); /* One column for small screens */
+            }
+        }
+        
+        /*footerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
+        
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: justify;
+            padding: 20px;
+            display: flex;
+           justify-content: space-between;
+            margin-top: 50px;
+         
+        }
+        .ft {
+            margin-left: 200px;
+        }
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer li {
+            display: block;
+            margin: 20px;
+        }
+        
+        .message{
+            margin-bottom: 20px;
+            display: block;
+        }
+        .whatsapp-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
+         /*footerrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr*/
+    </style>
+</head>
+<body>
+<!------------vavigation bar---------------------->
+    
+     <div class="media">
+        <div class="social-media-icons">
+            <a href="https://facebook.com/yourprofile" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://twitter.com/yourprofile" target="_blank" class="social-icon twitter" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="social-icon instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-icon linkedin" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+    <div class="navbar">
+        <h1>NINJA</h1>
+        <div class="search-container">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <span> language: </span>
+        <div class="language-options"> 
+  <ul>
+     
+    <li>
+       <image src="france.png"></image>
+    
+    </li>
+    <li>
+    <image src="english.png"></image>
+      
+    </li>
+    </ul>
+</div>
+    </div>
+    
+    <!---------nav-------------------->
+    <h1>Products List</h1>
+
+    <div class="filter">
+        <label for="category">Filter by Category:</label>
+        <select id="category">
+            <option value="all">All Categories</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home & Garden</option>
+            <option value="toys">Toys</option>
+        </select>
+    </div>
+
+    <div class="container">
+        <div class="product-card" data-category="electronics">
+            <img src="https://via.placeholder.com/100" alt="Product 1" class="product-image">
+            <h2 class="product-title">Product 1</h2>
+            <p class="product-price">$19.99</p>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="https://via.placeholder.com/100" alt="Product 2" class="product-image">
+            <h2 class="product-title">Product 2</h2>
+            <p class="product-price">$29.99</p>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="https://via.placeholder.com/100" alt="Product 3" class="product-image">
+            <h2 class="product-title">Product 3</h2>
+            <p class="product-price">$39.99</p>
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="https://via.placeholder.com/100" alt="Product 4" class="product-image">
+            <h2 class="product-title">Product 4</h2>
+            <p class="product-price">$49.99</p>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="pr1.jpg" alt="Product 5" class="product-image">
+            <h2 class="product-title">Product 5</h2>
+            <p class="product-price">$59.99</p>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="pr2.jpg" alt="Product 6" class="product-image">
+            <h2 class="product-title">Product 6</h2>
+            <p class="product-price">$69.99</p>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="pr4.jpg" alt="Product 7" class="product-image">
+            <h2 class="product-title">Product 7</h2>
+            <p class="product-price">$79.99</p>
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="https://via.placeholder.com/100" alt="Product 8" class="product-image">
+            <h2 class="product-title">Product 8</h2>
+            <p class="product-price">$89.99</p>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="https://via.placeholder.com/100" alt="Product 9" class="product-image">
+            <h2 class="product-title">Product 9</h2>
+            <p class="product-price">$99.99</p>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="https://via.placeholder.com/100" alt="Product 10" class="product-image">
+            <h2 class="product-title">Product 10</h2>
+            <p class="product-price">$109.99</p>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="https://via.placeholder.com/100" alt="Product 11" class="product-image">
+            <h2 class="product-title">Product 11</h2>
+            <p class="product-price">$119.99</p>
+        </div>
+        <div class="product-card" data-category="toys">
+            <img src="https://via.placeholder.com/100" alt="Product 12" class="product-image">
+            <h2 class="product-title">Product 12</h2>
+            <p class="product-price">$129.99</p>
+        </div>
+        <div class="product-card" data-category="electronics">
+            <img src="https://via.placeholder.com/100" alt="Product 13" class="product-image">
+            <h2 class="product-title">Product 13</h2>
+            <p class="product-price">$139.99</p>
+        </div>
+        <div class="product-card" data-category="clothing">
+            <img src="https://via.placeholder.com/100" alt="Product 14" class="product-image">
+            <h2 class="product-title">Product 14</h2>
+            <p class="product-price">$149.99</p>
+        </div>
+        <div class="product-card" data-category="home">
+            <img src="https://via.placeholder.com/100" alt="Product 15" class="product-image">
+            <h2 class="product-title">Product 15</h2>
+            <p class="product-price">$159.99</p>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-button">Prev</button>
+        <button class="nav-button">Next</button>
+    </div>
+    
+    
+    
+<div>
+    </div>
+    
+    <div class="footer">
+        <div class="ft">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#portfolio">Products</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#catalog">Catalog</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="ft">
+            <h2>Contact Us</h2>
+            <p>Email: info@ninjabase.com</p>
+            <p>Tell: +8619870035632</p>
+            <p>WhatsApp: +8619870035632</p>
+            <p>WeChat: +8619870035632</p>
+            <p>Address: 12th Changan Road, Yanta Dist., Xi'an, China</p>
+        </div>
+        <div class="ft">
+            <div class="message">
+                <h2>Leave a Message</h2>
+                <form action="#" method="POST">
+                    <input class="name" type="text" placeholder="Your Name" required>
+                    <input class="name" type="email" placeholder="Your Email" required>
+                    <textarea class="name" placeholder="Your Message" required></textarea>
+                    <button type="submit" class="cta-button">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">WhatsApp Us</a>
+    <script>
+        const filterSelect = document.getElementById('category');
+        const productCards = document.querySelectorAll('.product-card');
+
+        filterSelect.addEventListener('change', function() {
+            const selectedCategory = this.value;
+
+            productCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        
+        const languageOptions = document.querySelector('.language-options');
+languageOptions.addEventListener('click', (event) => {
+  if (event.target.tagName === 'LI') {
+    const selectedLanguage = event.target.querySelector('span').textContent;
+    // Implement language change logic here, e.g., using localStorage or sessionStorage
+    console.log('Selected language:', selectedLanguage);
+  }
+});
+    </script>
+
+</body>
+</html>
